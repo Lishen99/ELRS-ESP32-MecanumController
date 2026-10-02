@@ -1,0 +1,15 @@
+# PlatformIO build output and editor files
+.pio/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Settings saved by the desktop simulator
+sim_settings.txt
+
+# Operating system files
+.DS_Store
+Thumbs.db

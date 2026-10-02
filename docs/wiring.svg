@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Robot controller wiring</title>
+  <desc id="d">The ESP32 DevKit V1 sits in the middle. The ELRS receiver connects with four wires: VCC to VIN (5 V), GND to GND, receiver TX to GPIO16 and receiver RX to GPIO17. The Hiwonder motor board connects over I2C: SDA to GPIO21, SCL to GPIO22, and ground; its channels M1 to M4 drive the right rear, right front, left rear and left front wheels. A PS4 controller connects over Bluetooth. An optional host computer connects either with three wires (GPIO18 to the host's RX, GPIO19 to its TX, and ground) or with a USB cable.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="640" rx="12" fill="#ffffff"/>
+
+  <!-- PS4 controller -->
+  <rect x="400" y="12" width="240" height="52" rx="10" fill="#ecfeff" stroke="#334155" stroke-width="1.5"/>
+  <text x="520" y="35" text-anchor="middle" font-size="15" font-weight="600" fill="#0f172a">PS4 controller</text>
+  <text x="520" y="54" text-anchor="middle" font-size="12" fill="#475569">pair: hold Share + PS</text>
+  <line x1="520" y1="64" x2="520" y2="100" stroke="#0891b2" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <text x="530" y="87" font-size="12" fill="#0891b2">Bluetooth</text>
+
+  <!-- ELRS receiver -->
+  <rect x="24" y="110" width="200" height="220" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="124" y="142" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">ELRS receiver</text>
+  <text x="124" y="162" text-anchor="middle" font-size="12.5" fill="#475569">Happymodel EP1 / EP2</text>
+  <g font-size="13.5" fill="#0f172a" text-anchor="end">
+    <text x="210" y="204.5">VCC</text>
+    <text x="210" y="239.5">GND</text>
+    <text x="210" y="274.5">TX</text>
+    <text x="210" y="309.5">RX</text>
+  </g>
+
+  <!-- motor board -->
+  <rect x="24" y="380" width="200" height="200" rx="10" fill="#fff7ed" stroke="#334155" stroke-width="1.5"/>
+  <text x="124" y="410" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">Motor board</text>
+  <text x="124" y="428" text-anchor="middle" font-size="12" fill="#475569">Hiwonder 4-channel, I2C</text>
+  <g font-size="13.5" fill="#0f172a" text-anchor="end">
+    <text x="210" y="459.5">SDA</text>
+    <text x="210" y="494.5">SCL</text>
+    <text x="210" y="529.5">GND</text>
+  </g>
+  <g font-size="11.5" fill="#475569">
+    <text x="36" y="459">M1 right rear</text>
+    <text x="36" y="476">M2 right front</text>
+    <text x="36" y="493">M3 left rear</text>
+    <text x="36" y="510">M4 left front</text>
+    <text x="36" y="560">motor battery in</text>
+  </g>
+
+  <!-- ESP32 -->
+  <rect x="392" y="100" width="256" height="480" rx="10" fill="#eef2ff" stroke="#334155" stroke-width="1.5"/>
+  <text x="520" y="132" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">ESP32 DevKit V1</text>
+  <text x="520" y="152" text-anchor="middle" font-size="12.5" fill="#475569">running this firmware</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="406" y="204.5">VIN / 5V</text>
+    <text x="406" y="239.5">GND</text>
+    <text x="406" y="274.5">GPIO16 (RX2)</text>
+    <text x="406" y="309.5">GPIO17 (TX2)</text>
+    <text x="406" y="459.5">GPIO21 (SDA)</text>
+    <text x="406" y="494.5">GPIO22 (SCL)</text>
+    <text x="406" y="529.5">GND</text>
+  </g>
+  <g font-size="13.5" fill="#0f172a" text-anchor="end">
+    <text x="634" y="204.5">GPIO18</text>
+    <text x="634" y="239.5">GPIO19</text>
+    <text x="634" y="274.5">GND</text>
+    <text x="634" y="429.5">USB</text>
+  </g>
+
+  <!-- host computer -->
+  <rect x="760" y="110" width="176" height="350" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="848" y="142" text-anchor="middle" font-size="16" font-weight="600" fill="#0f172a">Host computer</text>
+  <text x="848" y="162" text-anchor="middle" font-size="12.5" fill="#475569">optional: Jetson, ...</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="774" y="204.5">RX</text>
+    <text x="774" y="239.5">TX</text>
+    <text x="774" y="274.5">GND</text>
+    <text x="774" y="429.5">USB</text>
+  </g>
+
+  <!-- receiver to ESP32 -->
+  <g stroke-width="2.5" fill="none" stroke-linecap="round">
+    <line x1="224" y1="200" x2="392" y2="200" stroke="#dc2626"/>
+    <line x1="224" y1="235" x2="392" y2="235" stroke="#475569"/>
+    <line x1="224" y1="270" x2="386" y2="270" stroke="#2563eb" marker-end="url(#arrow-blue)"/>
+    <line x1="392" y1="305" x2="230" y2="305" stroke="#15803d" marker-end="url(#arrow-green)"/>
+  </g>
+  <g font-size="12" text-anchor="middle">
+    <text x="308" y="193" fill="#dc2626">5 V</text>
+    <text x="308" y="263" fill="#2563eb">sticks (CRSF)</text>
+    <text x="308" y="298" fill="#15803d">telemetry, bind</text>
+  </g>
+
+  <!-- motor board to ESP32 -->
+  <g stroke-width="2.5" fill="none" stroke-linecap="round">
+    <line x1="224" y1="455" x2="392" y2="455" stroke="#ea580c"/>
+    <line x1="224" y1="490" x2="392" y2="490" stroke="#ea580c"/>
+    <line x1="224" y1="525" x2="392" y2="525" stroke="#475569"/>
+  </g>
+  <g font-size="12" text-anchor="middle">
+    <text x="308" y="448" fill="#ea580c">wheel speeds (I2C)</text>
+  </g>
+
+  <!-- ESP32 to host computer -->
+  <g stroke-width="2.5" fill="none" stroke-linecap="round">
+    <line x1="648" y1="200" x2="754" y2="200" stroke="#2563eb" marker-end="url(#arrow-blue)"/>
+    <line x1="760" y1="235" x2="654" y2="235" stroke="#15803d" marker-end="url(#arrow-green)"/>
+    <line x1="648" y1="270" x2="760" y2="270" stroke="#475569"/>
+    <line x1="648" y1="425" x2="760" y2="425" stroke="#7c3aed" stroke-dasharray="7 6"/>
+  </g>
+  <g font-size="12" text-anchor="middle">
+    <text x="704" y="193" fill="#2563eb">channels</text>
+    <text x="704" y="228" fill="#15803d">telemetry</text>
+    <text x="704" y="372" fill="#7c3aed">or instead:</text>
+    <text x="704" y="388" fill="#7c3aed">one USB cable</text>
+    <text x="704" y="404" fill="#7c3aed">(also powers it)</text>
+  </g>
+
+  <!-- solder points -->
+  <g fill="#0f172a">
+    <circle cx="224" cy="200" r="3.5"/><circle cx="224" cy="235" r="3.5"/><circle cx="224" cy="270" r="3.5"/><circle cx="224" cy="305" r="3.5"/>
+    <circle cx="392" cy="200" r="3.5"/><circle cx="392" cy="235" r="3.5"/><circle cx="392" cy="270" r="3.5"/><circle cx="392" cy="305" r="3.5"/>
+    <circle cx="224" cy="455" r="3.5"/><circle cx="224" cy="490" r="3.5"/><circle cx="224" cy="525" r="3.5"/>
+    <circle cx="392" cy="455" r="3.5"/><circle cx="392" cy="490" r="3.5"/><circle cx="392" cy="525" r="3.5"/>
+    <circle cx="648" cy="200" r="3.5"/><circle cx="648" cy="235" r="3.5"/><circle cx="648" cy="270" r="3.5"/><circle cx="648" cy="425" r="3.5"/>
+    <circle cx="760" cy="200" r="3.5"/><circle cx="760" cy="235" r="3.5"/><circle cx="760" cy="270" r="3.5"/><circle cx="760" cy="425" r="3.5"/>
+  </g>
+
+  <g font-size="12.5" fill="#334155">
+    <text x="24" y="606">Signals are 3.3 V and the pins are not 5 V tolerant. The receiver's VCC pad needs 5 V.</text>
+    <text x="24" y="626">Each TX goes to the other side's RX. Connect every ground, including the motor board's.</text>
+  </g>
+</svg>
